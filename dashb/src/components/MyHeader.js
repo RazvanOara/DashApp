@@ -1,26 +1,22 @@
-
+// src/components/MyHeader/MyHeader.js
 import React from 'react';
-import './MyHeader.css'; 
+import { useNavigate } from 'react-router-dom';
+import './MyHeader.css';
 
 function MyHeader() {
+  const navigate = useNavigate();
+
   return (
     <header className="my-header">
       <nav>
         <ul>
-        <li><button className="nav-button" onClick={() => handleButtonClick('rollups')}>Rollups</button></li>
-        <li><button className="nav-button" onClick={() => handleButtonClick('billing')}>Billing</button></li>
-        <li><button className="nav-button" onClick={() => handleButtonClick('organsiation')}>Organisation</button></li>
+          <li><button className="nav-button" onClick={() => navigate('/')}>Home</button></li>
+          <li><button className="nav-button" onClick={() => navigate('/about')}>About</button></li>
+          <li><button className="nav-button" onClick={() => navigate('/contact')}>Contact</button></li>
         </ul>
       </nav>
     </header>
   );
-
-
-  function handleButtonClick(page) {
-    alert(`Navigating to ${page}`);
-    // Add your navigation logic here, such as using React Router
-  }
-
 }
 
 export default MyHeader;

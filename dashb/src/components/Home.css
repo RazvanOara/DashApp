@@ -1,0 +1,17 @@
+/* src/components/Home.css */
+.message {
+    padding: 20px;
+    background-color: #ffeb3b;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .message:hover {
+    background-color: #ffeb3b;
+    opacity: 0.8;
+  }
+  

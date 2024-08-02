@@ -1,0 +1,93 @@
+/* src/components/WelcomeMessage.css */
+
+/* Keyframes for sliding down */
+@keyframes slide-down {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: auto;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .welcome-container {
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .welcome-container.fade-in {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    animation: slide-down 0.5s forwards;
+  }
+  
+  .welcome-container.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    animation: slide-up 0.5s forwards;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .close-button:hover {
+    color: #000;
+  }
+  
+  .welcome-container h1 {
+    color: #1abc9c;
+  }
+  
+  .welcome-container p {
+    color: #16a085;
+  }
+      
