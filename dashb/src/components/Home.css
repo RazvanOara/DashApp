@@ -1,17 +1,24 @@
 /* src/components/Home.css */
+.home-container {
+  background-color: #f0f0f0; /* Background color for consistency */
+  padding: 20px;
+  min-height: 100vh; /* Ensure it covers the full height */
+  position: relative; /* Ensure child components can use absolute positioning */
+}
+
+
 .message {
-    padding: 20px;
-    background-color: #ffeb3b;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 20px;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  .message:hover {
-    background-color: #ffeb3b;
-    opacity: 0.8;
-  }
-  
+  padding: 20px;
+  background-color: #ffeb3b;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.message:hover {
+  background-color: #ffeb3b;
+  opacity: 0.8;
+}

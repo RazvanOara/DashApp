@@ -1,0 +1,55 @@
+.networks-container {
+    background-color: #f0f0f0; /* Background color for the container */
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px auto; /* Center the container horizontally */
+    text-align: center;
+    position: relative; /* Changed from absolute to relative */
+    width: calc(100% - 40px); /* Adjusted width */
+    max-width: 1000px; /* Optional: Set a max-width for better control */
+    left: 100%; /* Start from outside the viewport */
+    opacity: 0;
+    transition: left 0.6s ease, opacity 0.6s ease;
+  }
+  
+  .networks-container.slide-in {
+    left: 0; /* Slide into view */
+    opacity: 1;
+  }
+  
+  .networks-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .network-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px; /* Adjust width to fit the content */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .network-item:hover {
+    transform: scale(1.15);
+  }
+  
+  .network-icon {
+    font-size: 50px; /* Adjust the size of the emoji */
+    margin-bottom: 10px;
+  }
+  
+  .network-details {
+    text-align: center;
+  }
+  
+  .network-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

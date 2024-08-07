@@ -1,0 +1,47 @@
+/* src/components/Tokens.css */
+.tokens-container {
+    background-color: #f0f0f0; /* Same background color as the home-container */
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+    text-align: center;
+    position: relative;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .tokens-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .token-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px; /* Adjust width to fit the content */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .token-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .token-icon {
+    font-size: 50px; /* Adjust the size of the emoji */
+    margin-bottom: 10px;
+  }
+  
+  .token-details {
+    text-align: center;
+  }
+  
+  .token-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

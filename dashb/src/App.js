@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -8,11 +7,14 @@ import About from './components/About';
 import Contact from './components/Contact';
 import WelcomeMessage from './components/WelcomeMessage';
 
+
 function App() {
   const [isMessageVisible, setIsMessageVisible] = useState(true);
+  const [isHomeVisible, setIsHomeVisible] = useState(false);
 
-  const handleClose = () => {
+  const handleCloseMessage = () => {
     setIsMessageVisible(false);
+    setTimeout(() => setIsHomeVisible(true), 500); // Delay to allow welcome message fade-out
   };
 
   return (
@@ -21,15 +23,18 @@ function App() {
         <MyHeader />
         {isMessageVisible && (
           <WelcomeMessage 
-            onClose={handleClose} 
+            onClose={handleCloseMessage} 
             isVisible={isMessageVisible} 
           />
         )}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <div className={`content ${isHomeVisible ? 'fade-in' : 'fade-out'}`}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+
+          </Routes>
+        </div>
       </div>
     </Router>
   );
