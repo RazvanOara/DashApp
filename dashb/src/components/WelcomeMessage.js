@@ -1,4 +1,3 @@
-// src/components/WelcomeMessage.js
 import React, { useEffect, useState } from 'react';
 import './WelcomeMessage.css';
 
@@ -30,7 +29,7 @@ function WelcomeMessage({ onClose, isVisible }) {
           <div
             className={`welcome-container ${isFading ? 'fade-out' : 'fade-in'}`}
           >
-            <button className="close-button" onClick={onClose}>×</button>
+            {/* <button className="close-button" onClick={onClose}>×</button> */}
             <h1>Welcome to Our Website!</h1>
             <p>We are glad to have you here. Click anywhere or close to dismiss this message.</p>
           </div>

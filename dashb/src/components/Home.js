@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+// src/components/Home.js
+import React from 'react';
+import { useHomeContext } from '../context/HomeContext';
 import Stacks from './Stacks';
 import Networks from './Networks';
 import Tokens from './Tokens';
@@ -7,65 +9,61 @@ import Identifiers from './Identifiers';
 import './Home.css';
 
 function Home() {
-  const [showStacks, setShowStacks] = useState(true);
-  const [showNetworks, setShowNetworks] = useState(false);
-  const [showTokens, setShowTokens] = useState(false);
-  const [showAvailabilityLayer, setShowAvailabilityLayer] = useState(false);
-  const [showIdentifiers, setShowIdentifiers] = useState(false);
+  const { state, updateState } = useHomeContext();
 
-  function handleStacksTransition() {
-    setShowStacks(false);
-    setTimeout(() => setShowNetworks(true), 600);
-  }
+  const handleStacksTransition = () => {
+    updateState({ showStacks: false });
+    setTimeout(() => updateState({ showNetworks: true }), 600);
+  };
 
-  function handleNetworksTransition() {
-    setShowNetworks(false);
-    setTimeout(() => setShowTokens(true), 600);
-  }
+  const handleNetworksTransition = () => {
+    updateState({ showNetworks: false });
+    setTimeout(() => updateState({ showTokens: true }), 600);
+  };
 
-  function handleTokensTransition() {
-    setShowTokens(false);
-    setTimeout(() => setShowAvailabilityLayer(true), 600);
-  }
+  const handleTokensTransition = () => {
+    updateState({ showTokens: false });
+    setTimeout(() => updateState({ showAvailabilityLayer: true }), 600);
+  };
 
-  function handleAvailabilityLayerTransition() {
-    setShowAvailabilityLayer(false);
-    setTimeout(() => setShowIdentifiers(true), 600);
-  }
+  const handleAvailabilityLayerTransition = () => {
+    updateState({ showAvailabilityLayer: false });
+    setTimeout(() => updateState({ showIdentifiers: true }), 600);
+  };
 
-  function handleBackToStacks() {
+  const handleBackToStacks = () => {
     sessionStorage.removeItem('networkChosen');
-    setShowNetworks(false);
-    setTimeout(() => setShowStacks(true), 600);
-  }
+    updateState({ showNetworks: false });
+    setTimeout(() => updateState({ showStacks: true }), 600);
+  };
 
-  function handleBackToNetworks() {
+  const handleBackToNetworks = () => {
     sessionStorage.removeItem('tokenChosen');
-    setShowTokens(false);
-    setTimeout(() => setShowNetworks(true), 600);
-  }
+    updateState({ showTokens: false });
+    setTimeout(() => updateState({ showNetworks: true }), 600);
+  };
 
-  function handleBackToTokens() {
+  const handleBackToTokens = () => {
     sessionStorage.removeItem('availabilityLayerChosen');
-    setShowAvailabilityLayer(false);
-    setTimeout(() => setShowTokens(true), 600);
-  }
+    updateState({ showAvailabilityLayer: false });
+    setTimeout(() => updateState({ showTokens: true }), 600);
+  };
 
-  function handleBackToAvailabilityLayer() {
+  const handleBackToAvailabilityLayer = () => {
     sessionStorage.removeItem('rollupName');
     sessionStorage.removeItem('subdomain');
     sessionStorage.removeItem('chainId');
-    setShowIdentifiers(false);
-    setTimeout(() => setShowAvailabilityLayer(true), 600);
-  }
+    updateState({ showIdentifiers: false });
+    setTimeout(() => updateState({ showAvailabilityLayer: true }), 600);
+  };
 
   return (
     <div className="home-container">
-      {showStacks && <Stacks onStackClick={handleStacksTransition} />}
-      {showNetworks && <Networks onBack={handleBackToStacks} onNetworkClick={handleNetworksTransition} />}
-      {showTokens && <Tokens onBack={handleBackToNetworks} onTokenClick={handleTokensTransition} />}
-      {showAvailabilityLayer && <AvailabilityLayer onBack={handleBackToTokens} onAvailabilityLayerClick={handleAvailabilityLayerTransition} />}
-      {showIdentifiers && <Identifiers onBack={handleBackToAvailabilityLayer} />}
+      {state.showStacks && <Stacks onStackClick={handleStacksTransition} />}
+      {state.showNetworks && <Networks onBack={handleBackToStacks} onNetworkClick={handleNetworksTransition} />}
+      {state.showTokens && <Tokens onBack={handleBackToNetworks} onTokenClick={handleTokensTransition} />}
+      {state.showAvailabilityLayer && <AvailabilityLayer onBack={handleBackToTokens} onAvailabilityLayerClick={handleAvailabilityLayerTransition} />}
+      {state.showIdentifiers && <Identifiers onBack={handleBackToAvailabilityLayer} />}
     </div>
   );
 }

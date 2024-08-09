@@ -1,11 +1,17 @@
 // src/components/Identifiers.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Identifiers.css';
 
 function Identifiers({ onBack }) {
   const [rollupName, setRollupName] = useState('');
   const [subdomain, setSubdomain] = useState('');
   const [chainId, setChainId] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation after component mounts
+    setIsVisible(true);
+  }, []);
 
   const handleSave = () => {
     sessionStorage.setItem('rollupName', rollupName);
@@ -15,17 +21,16 @@ function Identifiers({ onBack }) {
     
     // Log data to the console
     console.log('Stack Chosen:', sessionStorage.getItem('stackChosen'));
-    console.log('Network Chosen:',sessionStorage.getItem('networkChosen'));
+    console.log('Network Chosen:', sessionStorage.getItem('networkChosen'));
     console.log('Token Chosen:', sessionStorage.getItem('tokenChosen'));
     console.log('Rollup Name:', sessionStorage.getItem('rollupName'));
     console.log('Subdomain:', sessionStorage.getItem('subdomain'));
     console.log('Chain ID:', sessionStorage.getItem('chainId'));
     console.log('Layer:', sessionStorage.getItem('availabilityLayerChosen'));
-    
   };
 
   return (
-    <div className="identifiers-container">
+    <div className={`identifiers-container ${isVisible ? 'slide-in' : ''}`}>
       <h2>Enter Identifiers</h2>
       <div className="form-group">
         <label>Rollup Name</label>

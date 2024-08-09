@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -6,7 +7,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import WelcomeMessage from './components/WelcomeMessage';
-
+import { HomeProvider } from './context/HomeContext';
 
 function App() {
   const [isMessageVisible, setIsMessageVisible] = useState(true);
@@ -18,25 +19,26 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <MyHeader />
-        {isMessageVisible && (
-          <WelcomeMessage 
-            onClose={handleCloseMessage} 
-            isVisible={isMessageVisible} 
-          />
-        )}
-        <div className={`content ${isHomeVisible ? 'fade-in' : 'fade-out'}`}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-
-          </Routes>
+    <HomeProvider>
+      <Router>
+        <div className="App">
+          <MyHeader />
+          {isMessageVisible && (
+            <WelcomeMessage 
+              onClose={handleCloseMessage} 
+              isVisible={isMessageVisible} 
+            />
+          )}
+          <div className={`content ${isHomeVisible ? 'fade-in' : 'fade-out'}`}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </HomeProvider>
   );
 }
 
