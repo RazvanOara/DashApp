@@ -1,3 +1,4 @@
+/* src/components/Stacks.css */
 .stacks-container {
   background-color: #f0f0f0; /* Same background color as the home-container */
   padding: 20px;
@@ -36,8 +37,13 @@
 }
 
 .stack-icon {
-  font-size: 50px; /* Adjust the size of the emoji */
   margin-bottom: 10px;
+}
+
+.stack-image {
+  width: 50px; /* Adjust size of the image */
+  height: 50px; /* Ensure the image is square */
+  object-fit: cover; /* Ensure image covers the space without distortion */
 }
 
 .stack-details {
@@ -53,4 +59,21 @@
 .stack-description {
   font-size: 14px;
   color: #555;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff; /* Primary color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
 }

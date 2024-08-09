@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './Networks.css';
 
-function Networks({ onNetworkClick }) {
+function Networks({ onBack, onNetworkClick }) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -10,8 +10,8 @@ function Networks({ onNetworkClick }) {
   }, []);
 
   const networks = [
-    { name: 'Testnet', icon: '🧪' },
-    { name: 'Mainnet', icon: '🌐' }
+    { name: 'Testnet', icon: '🔨' },
+    { name: 'Mainnet', icon: '🖥️' }
   ];
 
   function handleClick(network) {
@@ -38,6 +38,7 @@ function Networks({ onNetworkClick }) {
           </div>
         ))}
       </div>
+      <button className="back-button" onClick={onBack}>Back to Stacks</button>
     </div>
   );
 }
