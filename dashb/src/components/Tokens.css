@@ -25,6 +25,7 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   width: 150px; /* Adjust width as needed */
+  transition: transform 0.3s;
 }
 
 .token-icon {
@@ -39,6 +40,9 @@
 
 .token-details {
   text-align: center;
+}
+.token-item:hover {
+  transform: scale(1.15);
 }
 
 .token-name {

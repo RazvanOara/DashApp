@@ -6,7 +6,7 @@ import optiRockImg from '../assets/optiRock.png'; // Import your image
 function Stacks({ onStackClick }) {
   const stacks = [
     { name: 'Optimism Bedrock', description: 'Description here', icon: optiRockImg },
-    // other stacks...
+    // other stacks
   ];
 
   function handleClick(stack) {
