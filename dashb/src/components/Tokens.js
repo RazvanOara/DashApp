@@ -1,4 +1,4 @@
-// src/components/Tokens.js
+
 import React, { useState, useEffect } from 'react';
 import './Tokens.css';
 import usdcImg from '../assets/usdc.png'
@@ -13,9 +13,9 @@ function Tokens({ onBack, onTokenClick }) {
   }, []);
 
   const tokens = [
-    { name: 'ETH', icon: ethImg },
+    { name: 'Ethereum (ETH)', icon: ethImg },
     { name: 'USDC', icon: usdcImg },
-    { name: 'WBT', icon: wbtImg }
+    { name: 'Wrapped BTC (WBTC)', icon: wbtImg }
   ];
 
   function handleClick(token) {
@@ -36,7 +36,6 @@ function Tokens({ onBack, onTokenClick }) {
             onClick={() => handleClick(token)}
           >
             <div className="token-icon">
-              {/* Check if token.icon is a URL, and if so, use an img tag */}
               {typeof token.icon === 'string' && token.icon.endsWith('.png') ? (
                 <img src={token.icon} alt={token.name} className="token-image" />
               ) : (

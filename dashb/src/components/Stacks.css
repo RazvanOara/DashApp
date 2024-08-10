@@ -1,18 +1,30 @@
-/* src/components/Stacks.css */
 .stacks-container {
-  background-color: #3d067b; /* Dark background color for consistency */
+  background: linear-gradient(270deg, #3d067b, #430701);
+  background-size: 400% 400%;
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
   text-align: center;
-  position: relative;
   transition: opacity 0.6s ease, transform 0.6s ease;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Adding shadow for depth */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  animation: gradientAnimation 10s ease infinite;
 }
 
 .stacks-container.fade-out {
   opacity: 0;
   transform: translateX(-100%);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .stacks-grid {
@@ -23,8 +35,8 @@
 }
 
 .stack-item {
-  background-color: #2a2a2a; /* Darker background for items */
-  border: 1px solid #444; /* Darker border color */
+  background-color: #2a2a2a;
+  border: 1px solid #444;
   border-radius: 10px;
   padding: 20px;
   width: 200px;
@@ -42,9 +54,9 @@
 }
 
 .stack-image {
-  width: 50px; /* Adjust size of the image */
-  height: 50px; /* Ensure the image is square */
-  object-fit: cover; /* Ensure image covers the space without distortion */
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
 }
 
 .stack-details {
@@ -54,28 +66,23 @@
 .stack-name {
   font-size: 18px;
   font-weight: bold;
-  color: #e0e0e0; /* Light text color */
+  color: #e0e0e0;
   margin-bottom: 5px;
 }
 
 .stack-description {
   font-size: 14px;
-  color: #b0b0b0; /* Light grey for description */
+  color: #b0b0b0;
 }
 
-.back-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff; /* Primary color */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.stack-description a {
+  color: #00bfff;
+  text-decoration: none;
 }
 
-.back-button:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
+.stack-description a:hover {
+  text-decoration: underline;
+}
+.stack-image {
+  pointer-events: none;
 }

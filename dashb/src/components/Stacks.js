@@ -1,12 +1,15 @@
-// src/components/Stacks.js
 import React from 'react';
 import './Stacks.css';
-import optiRockImg from '../assets/optiRock.png'; // Import your image
+import optiRockImg from '../assets/optiRock.png';
 
 function Stacks({ onStackClick }) {
   const stacks = [
-    { name: 'Optimism Bedrock', description: 'Description here', icon: optiRockImg },
-    // other stacks
+    { 
+      name: 'Optimism Bedrock', 
+      description: 'Learn more', 
+      icon: optiRockImg,
+      link: 'https://docs.optimism.io/stack/protocol/rollup/overview'
+    },
   ];
 
   function handleClick(stack) {
@@ -14,6 +17,11 @@ function Stacks({ onStackClick }) {
     if (onStackClick) {
       onStackClick(); // Notify Home component to handle transition
     }
+  }
+
+  function handleLinkClick(e) {
+    e.stopPropagation(); // Prevent click event from propagating to parent
+    // Do not call e.preventDefault(), so the link opens as intended
   }
 
   return (
@@ -31,7 +39,16 @@ function Stacks({ onStackClick }) {
             </div>
             <div className="stack-details">
               <div className="stack-name">{stack.name}</div>
-              <div className="stack-description">{stack.description}</div>
+              <div className="stack-description">
+                <a 
+                  href={stack.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={handleLinkClick} // Ensure this function is correctly applied
+                >
+                  {stack.description}
+                </a>
+              </div>
             </div>
           </div>
         ))}

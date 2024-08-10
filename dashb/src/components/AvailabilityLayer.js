@@ -1,4 +1,3 @@
-// src/components/AvailabilityLayer.js
 import React, { useState, useEffect } from 'react';
 import './AvailabilityLayer.css';
 import ethImg from '../assets/ethereum-cryptocurrency.256x256.png';
@@ -12,8 +11,8 @@ function AvailabilityLayer({ onBack, onAvailabilityLayerClick }) {
   }, []);
 
   const availabilityLayers = [
-    { name: 'Ethereum', icon: ethImg },
-    { name: 'Celestia', icon: celestiaImg }
+    { name: 'Ethereum', icon: ethImg, description: 'Provides robust data availability and security, making it a dependable choice for decentralized applications.' },
+    { name: 'Celestia', icon: celestiaImg, description: 'Focuses on scalability by decoupling data availability from execution, allowing for more efficient and flexible layer-1 solutions.' }
   ];
 
   function handleClick(layer) {
@@ -38,6 +37,7 @@ function AvailabilityLayer({ onBack, onAvailabilityLayerClick }) {
             </div>
             <div className="availability-layer-details">
               <div className="availability-layer-name">{layer.name}</div>
+              <div className="availability-layer-description">{layer.description}</div>
             </div>
           </div>
         ))}

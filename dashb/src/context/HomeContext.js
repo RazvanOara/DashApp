@@ -1,4 +1,4 @@
-// src/context/HomeContext.js
+
 import React, { createContext, useState, useContext } from 'react';
 
 const HomeContext = createContext();

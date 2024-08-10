@@ -1,6 +1,7 @@
-/* src/components/Identifiers.css */
+
 .identifiers-container {
-  background-color: #3d067b;
+  background: linear-gradient(270deg, #3d067b, #430701); /* Gradient background */
+  background-size: 400% 400%; /* Set background size for animation */
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
@@ -8,10 +9,11 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   opacity: 0; /* Start off invisible */
   transform: translateX(-100%); /* Start off-screen */
+  animation: gradientAnimation 10s ease infinite; /* Added gradient animation */
 }
 
 .identifiers-container.slide-in {
-  animation: slideIn 0.6s ease forwards; /* Apply the slide-in animation */
+  animation: slideIn 0.6s ease forwards, gradientAnimation 10s ease infinite; /* Apply the slide-in animation with gradient */
 }
 
 @keyframes slideIn {
@@ -22,6 +24,18 @@
   to {
     transform: translateX(0); /* Slide into view */
     opacity: 1;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -47,6 +61,18 @@
   font-size: 14px;
   background-color: #2a2a2a;
   color: #e0e0e0;
+}
+
+.description {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin-top: 5px;
+  text-align: center;
+  display: none; /* Hidden by default */
+}
+
+.form-group input:focus + .description {
+  display: block; /* Show description when input is focused */
 }
 
 .button-group {
