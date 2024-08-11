@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './MyHeader.css';
@@ -8,6 +7,9 @@ function MyHeader() {
 
   return (
     <header className="my-header">
+      <div className="website-name">
+        rollups idk
+      </div>
       <nav>
         <ul>
           <li><button className="nav-button" onClick={() => navigate('/')}>Home</button></li>
