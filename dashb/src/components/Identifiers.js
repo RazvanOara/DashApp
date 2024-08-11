@@ -65,7 +65,7 @@ function Identifiers({ onBack }) {
         setSubdomain('');
         setChainId('');
 
-        //clear the sesion storage
+        // Clear the session storage
         sessionStorage.clear();
 
       } else {
@@ -103,27 +103,30 @@ function Identifiers({ onBack }) {
       {showFail && <FailMessage onClose={handleCloseFail} />}
       <h2>Enter Identifiers</h2>
       <div className="form-group">
-        <label>Rollup Name</label>
+        <label htmlFor="rollupName">Rollup Name</label>
         <input 
           type="text" 
+          id="rollupName"
           value={rollupName} 
           onChange={(e) => setRollupName(e.target.value)} 
         />
         <div className="description">Identify the rollup layer you're using by its unique name.</div>
       </div>
       <div className="form-group">
-        <label>Subdomain</label>
+        <label htmlFor="subdomain">Subdomain</label>
         <input 
           type="text" 
+          id="subdomain"
           value={subdomain} 
           onChange={(e) => setSubdomain(e.target.value)} 
         />
         <div className="description">Specify the uniquely subdomain within the rollup network to narrow down your focus.</div>
       </div>
       <div className="form-group">
-        <label>Chain ID</label>
+        <label htmlFor="chainId">Chain ID</label>
         <input 
           type="text" 
+          id="chainId"
           value={chainId} 
           onChange={(e) => setChainId(e.target.value)} 
         />

@@ -10,15 +10,17 @@ function FailMessage({ onClose }) {
       }
     };
 
-    window.addEventListener('click', handleClick);
+    // Add click listener to the overlay
+    const overlay = document.querySelector('.fail-message-overlay');
+    overlay?.addEventListener('click', handleClick);
 
     return () => {
-      window.removeEventListener('click', handleClick);
+      overlay?.removeEventListener('click', handleClick);
     };
   }, [onClose]);
 
   return (
-    <div className="fail-message-overlay" onClick={onClose}>
+    <div className="fail-message-overlay" data-testid="fail-message-overlay">
       <div className="fail-message">
         <p>Rollup deployment failed. ID or subdomain is not unique. Please choose a different one.</p>
       </div>

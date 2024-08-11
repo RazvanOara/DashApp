@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Stacks.css';
 import optiRockImg from '../assets/optiRock.png';
 
 function Stacks({ onStackClick }) {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setShow(true); // Trigger the slide-in animation
+  }, []);
+
   const stacks = [
     { 
       name: 'Optimism Bedrock', 
@@ -25,7 +31,7 @@ function Stacks({ onStackClick }) {
   }
 
   return (
-    <div className="stacks-container">
+    <div className={`stacks-container ${show ? 'slide-in' : ''}`}>
       <h2>Select a stack</h2>
       <div className="stacks-grid">
         {stacks.map((stack, index) => (
