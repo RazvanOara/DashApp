@@ -1,0 +1,49 @@
+
+.home-container {
+  background-color: #000000; /* Dark background color for consistency */
+  padding: 20px;
+  min-height: 100vh; /* Ensure it covers the full height */
+  position: relative; /* Ensure child components can use absolute positioning */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Adding shadow for depth */
+}
+
+/* General button styles */
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff; /* Primary color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Header styles */
+.header {
+  background-color: #8B0000; /* Dark red predominant color */
+  padding: 10px 20px;
+  text-align: center;
+  color: #fff;
+  border-bottom: 2px solid #5a0000; /* Slightly darker shade for border */
+}
+
+.header .nav-button {
+  margin: 0 10px;
+  padding: 10px 15px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.header .nav-button:hover {
+  background-color: #004080; /* Darker shade for hover effect */
+}

@@ -1,33 +1,61 @@
-/* src/components/MyHeader.css */
 .my-header {
-    background-color: #282c34;
-    padding: 20px;
-    color: white;
-    text-align: center;
+  background-color: #3d067b;
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between name and nav items */
+}
+
+.my-header .website-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  animation: moveCenter 5s ease-in-out infinite; /* Apply animation */
+}
+
+.my-header nav {
+  flex: 1; /* Takes up remaining space */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center align navigation items */
+  transform: translateX(-75px); /* Adjust this value to move buttons left */
+} 
+
+.my-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox for alignment */
+}
+
+.my-header nav ul li {
+  margin: 0 10px;
+}
+
+.nav-button {
+  background-color: #040d3a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 4px; 
+}
+
+.nav-button:hover {
+  background-color: #21a1f1;
+}
+
+/* Keyframes for the animation */
+@keyframes moveCenter {
+  0% {
+    transform: translateX(-10%); /* Start from the left */
   }
-  
-  .my-header nav ul {
-    list-style: none;
-    padding: 0;
+  50% {
+    transform: translateX(10%); /* Move to the right */
   }
-  
-  .my-header nav ul li {
-    display: inline;
-    margin: 0 10px;
+  100% {
+    transform: translateX(-10%); /* Return to the left */
   }
-  
-  .nav-button {
-    background-color: #1b7892;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 4px;
-  }
-  
-  .nav-button:hover {
-    background-color: #21a1f1;
-  }
-  
+}

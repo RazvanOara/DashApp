@@ -1,0 +1,114 @@
+.networks-container {
+  background: linear-gradient(270deg, #3d067b, #430701);
+  background-size: 400% 400%; /* Adjust for smooth animation */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+  width: calc(100% - 40px);
+  max-width: 1000px;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Use transform instead of left */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  animation: gradientAnimation 10s ease infinite; /* Add gradient animation */
+}
+
+.networks-container.slide-in {
+  animation: slideIn 0.6s ease forwards, gradientAnimation 10s ease infinite; /* Apply the slide-in and gradient animation */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%); /* Start off-screen */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* Slide into view */
+    opacity: 1;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.networks-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.network-item {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.network-item:hover {
+  transform: scale(1.15);
+}
+
+.network-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+.network-details {
+  text-align: center;
+}
+
+.network-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(to right, #024286, #0056b3); /* Gradient for button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center; /* Center text within button */
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.back-button span {
+  margin-left: 0; /* Remove margin if text is not centered */
+}
+
+.network-description {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin-top: 10px;
+  padding: 0 10px;
+  text-align: center;
+}

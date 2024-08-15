@@ -1,0 +1,88 @@
+.stacks-container {
+  background: linear-gradient(270deg, #3d067b, #430701);
+  background-size: 400% 400%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  animation: gradientAnimation 10s ease infinite;
+}
+
+.stacks-container.fade-out {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.stacks-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stack-item {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.stack-item:hover {
+  transform: scale(1.15);
+}
+
+.stack-icon {
+  margin-bottom: 10px;
+}
+
+.stack-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.stack-details {
+  text-align: center;
+}
+
+.stack-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+}
+
+.stack-description {
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+.stack-description a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.stack-description a:hover {
+  text-decoration: underline;
+}
+.stack-image {
+  pointer-events: none;
+}

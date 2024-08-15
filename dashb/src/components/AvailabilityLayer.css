@@ -1,0 +1,90 @@
+.availability-layer-container {
+  background: linear-gradient(270deg, #3d067b, #430701);
+  background-size: 400% 400%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: gradientAnimation 10s ease infinite;
+}
+
+.availability-layer-container.slide-in {
+  animation: slideIn 0.6s ease forwards, gradientAnimation 10s ease infinite;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.availability-layer-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.availability-layer-item {
+  background-color: #2a2a2a;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.availability-layer-item:hover {
+  transform: scale(1.05);
+}
+
+.availability-layer-icon {
+  margin-bottom: 10px;
+}
+
+.availability-layer-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.availability-layer-details {
+  text-align: center;
+}
+
+.availability-layer-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

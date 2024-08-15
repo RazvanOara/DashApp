@@ -1,0 +1,109 @@
+
+  .tokens-container {
+    background: linear-gradient(270deg, #3d067b, #430701);
+    background-size: 400% 400%;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: gradientAnimation 10s ease infinite;
+  }
+
+  .tokens-container.slide-in {
+    animation: slideIn 0.6s ease forwards, gradientAnimation 10s ease infinite;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .tokens-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .token-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 10px;
+    width: 150px;
+    transition: transform 0.3s;
+  }
+
+  .token-icon {
+    margin-bottom: 10px;
+  }
+
+  .token-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  .token-details {
+    text-align: center;
+  }
+
+  .token-item:hover {
+    transform: scale(1.15);
+  }
+
+  .token-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e0e0e0;
+  }
+
+  .back-button {
+    display: inline-flex; /* Change to inline-flex for better alignment */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center content horizontally */
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+
+  .stack-image {
+    pointer-events: none;
+  }
+  
