@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import './Tokens.css';
-import usdcImg from '../assets/usdc.png'
-import wbtImg from '../assets/wbtc.256x256.png'
-import ethImg from '../assets/ethereum-cryptocurrency.256x256.png'
+import usdcImg from '../../assets/usdc.png'
+import wbtImg from '../../assets/wbtc.256x256.png'
+import ethImg from '../../assets/ethereum-cryptocurrency.256x256.png'
 
 function Tokens({ onBack, onTokenClick }) {
   const [show, setShow] = useState(false);

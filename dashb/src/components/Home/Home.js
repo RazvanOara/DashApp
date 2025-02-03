@@ -1,12 +1,13 @@
 // src/components/Home.js
 import React from 'react';
-import { useHomeContext } from '../context/HomeContext';
-import Stacks from './Stacks';
-import Networks from './Networks';
-import Tokens from './Tokens';
-import AvailabilityLayer from './AvailabilityLayer';
-import Identifiers from './Identifiers';
+import { useHomeContext } from '../../context/HomeContext';
+import Stacks from '../Stacks/Stacks';
+import Networks from '../Networks/Networks';
+import Tokens from '../Tokens/Tokens';
+import AvailabilityLayer from '../AvailabilityLayer/AvailabilityLayer';
+import Identifiers from '../Identifiers/Identifiers';
 import './Home.css';
+
 
 function Home() {
   const { state, updateState } = useHomeContext();

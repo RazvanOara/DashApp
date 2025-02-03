@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AvailabilityLayer.css';
-import ethImg from '../assets/ethereum-cryptocurrency.256x256.png';
-import celestiaImg from '../assets/celestia-tia-logo.png';
+import ethImg from '../../assets/ethereum-cryptocurrency.256x256.png';
+import celestiaImg from '../../assets/celestia-tia-logo.png';
 
 function AvailabilityLayer({ onBack, onAvailabilityLayerClick }) {
   const [show, setShow] = useState(false);

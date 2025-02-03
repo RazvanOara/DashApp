@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Identifiers.css';
-import DeploySuccess from './DeploySuccess';
-import FailMessage from './FailMessage'; // Import FailMessage component
-import { useHomeContext } from '../context/HomeContext'; // Import the context
+import DeploySuccess from '../DeploySuccess/DeploySuccess';
+import FailMessage from '../FailMessage/FailMessage'; // Import FailMessage component
+import { useHomeContext } from '../../context/HomeContext'; // Import the context
 
 function Identifiers({ onBack }) {
   const [rollupName, setRollupName] = useState('');

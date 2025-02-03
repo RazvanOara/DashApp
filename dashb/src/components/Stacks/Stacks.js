@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Stacks.css';
-import optiRockImg from '../assets/optiRock.png';
+import optiRockImg from '../../assets/optiRock.png';
 
 function Stacks({ onStackClick }) {
   const [show, setShow] = useState(false);

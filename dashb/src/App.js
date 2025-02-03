@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import MyHeader from './components/MyHeader';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import WelcomeMessage from './components/WelcomeMessage';
+import MyHeader from './components/MyHeader/MyHeader'
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import WelcomeMessage from './components/WelcomeMessage/WelcomeMessage';
 import { HomeProvider } from './context/HomeContext';
+
 
 function App() {
   const [isMessageVisible, setIsMessageVisible] = useState(true);
